@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 public class RemoveDuplicates {
 
@@ -15,7 +16,22 @@ public class RemoveDuplicates {
 		indexRelationMap.put("1002", new ArrayList<String>(Arrays.asList("30003","30004","30009","30005")));
 		indexRelationMap.put("1003", new ArrayList<String>(Arrays.asList("30005","30006","30007")));
 		
-		//List<String> 
+		//临时集合
+		List<String> removeTempList = new ArrayList<String>();
+		for(Entry<String,List<String>>  list:indexRelationMap.entrySet())
+		{
+			//最终需要的集合
+			List<String> removeEndList = new ArrayList<String>();
+			for(String str:list.getValue())
+			{
+				if(!removeTempList.contains(str)) 
+				{
+					removeEndList.add(str);
+				}
+				removeTempList.add(str);
+			}
+			System.out.println(list.getKey()+":"+removeEndList);
+		}
 		
 	}
 }
