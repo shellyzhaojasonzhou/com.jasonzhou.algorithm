@@ -7,8 +7,22 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+/**
+ * Purpose: 针对指标在不使用递归的情况下删除重复元素
+ * @author jasonzhou
+ * @since  JDK 1.8
+ * @date   2018年4月1日
+ * @version 1.0.0
+ * @MaintenancePersonnel jasonzhou
+ */
 public class RemoveDuplicates {
 
+	/**
+	 * Purpose:
+	 * @author jasonzhou
+	 * @param args
+	 * @return void
+	 */
 	public static void main(String[] args) {
 		//组装传入指标数据
 		Map<String,List<String>> indexRelationMap = new LinkedHashMap<String,List<String>>();
